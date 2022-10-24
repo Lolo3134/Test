@@ -1,36 +1,16 @@
 async function start() {
     let usersCardBox = document.querySelector('#cardBox');
     let usersPopup = document.querySelector('#userPopup');
-    const input = document.querySelector('#input')
     let users = await fetchUsers();
-    let filterUsers = fetchFilterUsers();
 
+    usersPopup.innerHTML = getUserModals(users).join('');
+    usersCardBox.innerHTML = getUserCards(users).join('');
 
-    input.oninput = function () {
-        let value = this.value.trim().toLowerCase();
-        return value
-    }
-
-    if (value !== '') {
-        usersCardBox.innerHTML = getUserCards(users).join('');
-        usersPopup.innerHTML = getUserModals(users).join('');
-    } else {
-
-        usersCardBox.innerHTML = getUserCards(filterUsers).join('');
-        usersPopup.innerHTML = getUserModals(filterUsers).join('');
-    }
 }
-
 
 
 function fetchUsers() {
     const url = 'http://127.0.0.1:3000'
-
-    return fetch(url).then(res => res.json())
-}
-
-function fetchFilterUsers(value) {
-    const url = `http://127.0.0.1:3000/?term=${value}`
 
     return fetch(url).then(res => res.json())
 }
