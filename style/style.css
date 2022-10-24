@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+@import "popUp.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.search {
+    margin: 30px 0;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 25px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    width: calc(100% - 80px);
+    vertical-align: middle;
+    margin: 0 20px;
+}
+
+input[type="submit"] {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: url("../style/icon/search.svg") no-repeat 50% 50%;
+    cursor: pointer;
+}
+
+.content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card {
+    min-width: 200px;
+    min-height: 200px;
+    -webkit-box-shadow: 0px 15px 30px -1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 15px 30px -1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 15px 30px -1px rgba(34, 60, 80, 0.2);
+    padding: 20px;
+    cursor: pointer;
+}
+
+.card.hide {
+    display: none;
+}
+
+.card--title {
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.card--phone {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: gray;
+    align-items: center;
+    font-weight: 500;
+}
+
+.card--mail {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card--mail a {
+    color: gray;
+}
